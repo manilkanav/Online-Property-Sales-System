@@ -22,6 +22,16 @@ include 'includes/header.php';
 </section>
 
 <?php
+
+// Check if an error message is present in the URL
+if (isset($_GET['error'])) {
+    $error = $_GET['error'];
+    // Display the error message
+    echo '<p class="error">' . htmlspecialchars($error) . '</p>';
+}
+?>
+
+<?php
 // Include the footer
 include 'includes/footer.php';
 ?>

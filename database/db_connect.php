@@ -3,12 +3,11 @@
 require_once 'config.php';
 
 // Establish a database connection
-try {
-    $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-} catch (PDOException $e) {
-    die('Database connection failed: ' . $e->getMessage());
+$conn = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+// Check the database connection
+if ($conn->connect_error) {
+    die('Database connection failed: ' . $conn->connect_error);
 }
 
-// Other database-related code...
+?>
