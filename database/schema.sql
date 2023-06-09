@@ -63,7 +63,7 @@ CREATE TABLE inspection_requests (
 );
 
 -- Create the admins table
-CREATE TABLE admins (
+CREATE TABLE moderator (
   id INT(11) PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
