@@ -28,7 +28,7 @@
 
     <div class="subheader">
         <ul class="tabs">
-            <li><a href="manage_listings.php">Manage Listings</a></li>
+            <li><a class="selected" href="user_dashboard.php">Manage Listings</a></li>
             <li><a href="manage_inspections.php">Manage Inspections</a></li>
             <li><a href="manage_reviews.php">Manage Reviews</a></li>
         </ul>
@@ -37,9 +37,7 @@
     <!-- Main content of the user dashboard -->
     <div class="content">
         <!-- Your user dashboard content goes here -->
-        <?php
-            echo $_SESSION['name'];
-        ?>
+        <a href="add_listing.php">Add Property</a>
     </div>
 
     <!-- Include your footer.php file here -->
