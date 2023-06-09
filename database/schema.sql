@@ -62,6 +62,17 @@ CREATE TABLE inspection_requests (
   FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
+-- Create the saved properties table
+CREATE TABLE saved_properties (
+  id INT(11) PRIMARY KEY AUTO_INCREMENT,
+  user_id INT(11) NOT NULL,
+  property_id INT(11) NOT NULL,
+  saved_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (property_id) REFERENCES properties(id)
+);
+
+
 -- Create the admins table
 CREATE TABLE moderator (
   id INT(11) PRIMARY KEY AUTO_INCREMENT,
