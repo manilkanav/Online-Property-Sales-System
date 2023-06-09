@@ -1,2 +1,3 @@
-images/property/*
-images/profile/*
+*.png
+*.jpg
+*.jpeg
