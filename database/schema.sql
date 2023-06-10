@@ -55,12 +55,15 @@ CREATE TABLE reviews (
 CREATE TABLE inspection_requests (
   id INT(11) PRIMARY KEY AUTO_INCREMENT,
   user_id INT(11) NOT NULL,
+  property_id INT(11) NOT NULL,
   request_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   inspection_date DATE NOT NULL,
   status ENUM('pending', 'approved', 'rejected') NOT NULL DEFAULT 'pending',
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  FOREIGN KEY (user_id) REFERENCES users(id)
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (property_id) REFERENCES properties(id)
 );
+
 
 -- Create the saved properties table
 CREATE TABLE saved_properties (

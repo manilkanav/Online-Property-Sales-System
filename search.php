@@ -29,7 +29,7 @@
             // Include the database connection file
             require 'database/db_connect.php';
 
-            if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+            if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['search'])) {
                 // Retrieve the search term and search by option
                 $searchTerm = $_GET['search'];
                 $searchBy = $_GET['search_by'];
