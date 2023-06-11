@@ -1,9 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Property</title>
+    <!-- Include your CSS stylesheets and other necessary resources here -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
 <?php
 // Include the database connection file
 require_once 'database/db_connect.php';
 
 // Check if the user is logged in
-session_start();
+include 'includes/header.php';
+
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     // Redirect to the login page if not logged in
     header('Location: login.php');
@@ -46,16 +56,8 @@ if (isset($_GET['id'])) {
 mysqli_close($conn);
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Edit Property</title>
-    <!-- Include your CSS stylesheets and other necessary resources here -->
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+
     <!-- Include your header.php file here -->
-    <?php include 'includes/header.php'; ?>
 
     <div class="container">
         <h2>Edit Property</h2>
