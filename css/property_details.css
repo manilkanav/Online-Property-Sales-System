@@ -1,0 +1,91 @@
+/* property_details.css */
+
+/* property_details.css */
+
+.container {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.carousel-buttons {
+  text-align: center;
+}
+
+.carousel {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+}
+
+.btn-call {
+  background-color: #ff9800;
+  color: #fff;
+  border: none;
+}
+
+.btn-call:hover {
+  background-color: #ffb74d;
+}
+
+.btn-call i {
+  margin-right: 5px;
+}
+
+/* property_details.css */
+
+/* Heading font */
+/* property_details.css */
+
+/* Heading font */
+.property-title {
+  font-family: "Arial", sans-serif;
+  font-size: 24px;
+}
+
+.property-section-heading {
+  font-family: "Arial", sans-serif;
+  font-size: 18px;
+}
+
+/* Compartments */
+.property-section {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.property-section-content {
+  margin: 0;
+}
+
+/* Reviews section */
+.review {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.review p {
+  margin: 5px 0;
+}
+
+.review a {
+  color: #ff0000;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.review a:hover {
+  text-decoration: underline;
+}
