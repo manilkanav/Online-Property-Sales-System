@@ -25,7 +25,6 @@
 
     <div id="search-results" class="property-listings">
         <?php
-            // Include the database connection file
             require 'database/db_connect.php';
 
             if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['search'])) {

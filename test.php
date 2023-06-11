@@ -31,7 +31,6 @@
     <label for="profilepic">Profile Picture:</label>
     <input type="file" id="profilepic" name="profilepic"><br><br>
 
-    <!-- Add more form fields as needed -->
 
     <input type="submit" value="Sign Up">
   </form>
