@@ -51,6 +51,7 @@ mysqli_close($conn);
 <head>
     <title>Edit Property</title>
     <!-- Include your CSS stylesheets and other necessary resources here -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <!-- Include your header.php file here -->

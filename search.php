@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Property Search</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
+    
 </head>
 <body>
     <?php include 'includes/header.php'; ?>

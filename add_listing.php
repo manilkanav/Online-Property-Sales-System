@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Add Property Listing</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/addlisting_styles.css">
 </head>
 <body>
 <?php include 'includes/header.php'; 
@@ -38,6 +39,27 @@
 
         return true; // Allow form submission
     }
+    
+    function preview_image() {
+    var total_file = document.getElementById("upload_file").files.length;
+    var imagePreviewContainer = document.getElementById("image_preview");
+
+    // Show or hide the container based on the number of selected files
+    if (total_file > 0) {
+        imagePreviewContainer.style.display = "block";
+    } else {
+        imagePreviewContainer.style.display = "none";
+    }
+
+    // Add the image previews
+    for (var i = 0; i < total_file; i++) {
+        var img = document.createElement("img");
+        img.src = URL.createObjectURL(event.target.files[i]);
+        img.classList.add("preview-image");
+        imagePreviewContainer.appendChild(img);
+    }
+}
+
 </script>
 
 <form action="actions/property_process.php" method="POST" enctype="multipart/form-data" onsubmit="return validateFileUpload();">
@@ -71,12 +93,15 @@
     <label for="size">Size (in sq ft):</label>
     <input type="number" id="size" name="size" required><br><br>
 
-    <label for="images">Upload Images:</label>
-    <input type="file" id="images" name="images[]" accept="image/*" multiple><br><br>
+    <label for="images">Upload Images (up to 5):</label>
+    <input type="file" id="images" name="images[]" accept="image/*" multiple onchange="previewImages(event)"><br><br>
+    
+    <div id="image_preview"></div>
 
     <input type="submit" value="Add Listing">
 </form>
 
+<script src="js/addlisting.js"></script>
 <?php include 'includes/footer.php'; ?>
 </body>
 </html>
