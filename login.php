@@ -4,6 +4,7 @@
     <title>Login Page</title>
     <!-- Your CSS and other head elements -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
 
@@ -13,12 +14,12 @@ include 'includes/header.php';
 ?>
 
 <!-- Login form -->
-<section>
-    <h2>Login</h2>
+<section  class ="section">
+    <h2 class = "title">Welcome back</h2>
     <form action="actions/login_process.php" method="post">
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <button type="submit">Login</button>
+        <input type="text" name="username" placeholder="Username" required class = "username">
+        <input type="password" name="password" placeholder="Password" required class ="password">
+        <button type="submit">Login</button class = "submitbtn">
     </form>
 </section>
 
