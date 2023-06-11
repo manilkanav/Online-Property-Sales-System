@@ -111,3 +111,34 @@ nav {
 .signup_button {
   background-color: #2f52a4;
 }
+
+.property-card {
+  width: calc(33.33% - 20px);
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.property-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.property-card h3 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.property-card p {
+  margin-bottom: 10px;
+}
+
+.property-card a {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}

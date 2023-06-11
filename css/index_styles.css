@@ -1,7 +1,35 @@
+/* index_styles.css */
+
 .hero {
   background-color: #f2f2f2;
-  padding: 50px 0;
+  padding: 80px 0;
   text-align: center;
+}
+
+.hero h1 {
+  font-size: 36px;
+  color: #333;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3;
 }
 
 .container {
@@ -10,57 +38,44 @@
   padding: 0 20px;
 }
 
-.hero h1 {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 18px;
-  margin-bottom: 30px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 12px 20px;
-  background-color: #333;
-  color: green;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 4px;
-}
-
 .featured-properties {
-  padding: 50px 0;
+  padding: 40px 0;
+  text-align: center;
 }
 
 .featured-properties h2 {
-  text-align: center;
   font-size: 24px;
-  margin-bottom: 30px;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 .property-cards {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .property-card {
   width: 300px;
   margin: 20px;
   padding: 20px;
-  border: 1px solid #ccc;
-  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
 }
 
-.property-image img {
+.property-card img {
   width: 100%;
-  height: auto;
-  max-height: 200px;
+  height: 200px;
   object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 10px;
 }
 
-.property-card h3 {
-  margin-top: 10px;
+.property-title {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
 }
+
+/* Add any additional styles as needed */
