@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Add Property Listing</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/addlisting_styles.css">
 </head>
 <body>

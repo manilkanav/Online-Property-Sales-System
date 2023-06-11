@@ -61,3 +61,55 @@
   height: 45px;
   border-radius: 6px;
 }
+
+.property-card {
+  display: inline-block;
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.property-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.property-card h3.property-title {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.property-card p.property-price {
+  font-weight: bold;
+}
+
+.empty-container {
+  text-align: center;
+  padding: 20px;
+  font-weight: bold;
+  color: #888;
+}
+
+.property-listings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  justify-items: center;
+}
+
+.view-details-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.view-details-btn:hover {
+  background-color: #0056b3;
+}

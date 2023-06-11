@@ -2,11 +2,11 @@
 <html>
 <head>
     <title>User Dashboard - Manage Reviews</title>
-    <!-- Include your CSS stylesheets and other necessary resources here -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/user_dashboard.css">
+
 </head>
 <body>
-    <!-- Include your header.php file here -->
     <?php
         include 'includes/header.php';
         // Check if the user is logged in
@@ -16,7 +16,7 @@
             exit();
         }
 
-        echo '<h1>Welcome to Property Sales, ' . $_SESSION['name'] . '!</h1>';
+        echo '<h1 class="dashboard-title">Welcome to Property Sales, ' . $_SESSION['name'] . '!</h1>';
     ?>
 
     <!-- Subheader with tabs -->
@@ -31,7 +31,7 @@
     <!-- Main content of the user dashboard -->
     <div class="content">
         <!-- Display reviews done by the user -->
-        <h2>Reviews Done By You</h2>
+        <h2 class="section-title">Reviews Done By You</h2>
         <?php
             // Include the database connection file
             require_once 'database/db_connect.php';
@@ -47,17 +47,17 @@
             if (mysqli_num_rows($reviewResult) > 0) {
                 // Display each review with property name and options
                 while ($review = mysqli_fetch_assoc($reviewResult)) {
-                    echo "<div>";
+                    echo "<div class='review'>";
                     echo "<p>Property: " . $review['property_title'] . "</p>";
                     echo "<p>Review: " . $review['comment'] . "</p>";
                     // Add additional details as needed
 
                     // Add option to view property details
-                    echo "<a href='property_details.php?id=" . $review['property_id'] . "'>View Property Details</a>";
+                    echo "<a href='property_details.php?id=" . $review['property_id'] . "' class='view-details-btn'>View Property Details</a>";
                     // Add option to edit review
-                    echo "<a href='edit_review.php?id=" . $review['id'] . "'>Edit Review</a>";
+                    echo "<a href='edit_review.php?id=" . $review['id'] . "' class='edit-review-btn'>Edit Review</a>";
                     // Add option to delete review
-                    echo "<a href='actions/delete_review.php?id=" . $review['id'] . "'>Delete Review</a>";
+                    echo "<a href='actions/delete_review.php?id=" . $review['id'] . "' class='delete-review-btn'>Delete Review</a>";
                     echo "</div>";
                 }
             } else {
