@@ -30,6 +30,7 @@
 
     <!-- Main content of the user dashboard -->
     <div class="content">
+        <section>
         <!-- Display inspection requests done by the user -->
         <h2>Inspection Requests Done By You</h2>
         <?php
@@ -40,15 +41,15 @@
             $userID = $_SESSION['user_id'];
 
             // Prepare the SQL statement to fetch the inspection requests done by the user
-            $inspectionQuery = "SELECT * FROM inspection_requests WHERE user_id = $userID";
+            $inspectionQuery = "SELECT inspection_requests.*, properties.title AS property_title FROM inspection_requests JOIN properties ON inspection_requests.property_id = properties.id WHERE inspection_requests.user_id = $userID";
             $inspectionResult = mysqli_query($conn, $inspectionQuery);
 
             // Check if the user has any inspection requests done
             if (mysqli_num_rows($inspectionResult) > 0) {
-                // Display each inspection request with its status
+                // Display each inspection request with its status and property name
                 while ($inspection = mysqli_fetch_assoc($inspectionResult)) {
                     echo "<div>";
-                    echo "<p>Property ID: " . $inspection['property_id'] . "</p>";
+                    echo "<p>Property: " . $inspection['property_title'] . "</p>";
                     echo "<p>Status: " . $inspection['status'] . "</p>";
                     // Add additional details as needed
 
@@ -63,12 +64,14 @@
                 echo "<p>You have not made any inspection requests.</p>";
             }
         ?>
+        </section>
 
         <!-- Display inspection requests received by the user -->
+        <section>
         <h2>Inspection Requests Received By You</h2>
         <?php
             // Prepare the SQL statement to fetch the inspection requests received by the user
-            $receivedQuery = "SELECT * FROM inspection_requests WHERE property_id IN (SELECT id FROM properties WHERE user_id = $userID)";
+            $receivedQuery = "SELECT inspection_requests.*, properties.title AS property_title FROM inspection_requests JOIN properties ON inspection_requests.property_id = properties.id WHERE properties.user_id = $userID";
             $receivedResult = mysqli_query($conn, $receivedQuery);
 
             // Check if the user has received any inspection requests
@@ -76,7 +79,7 @@
                 // Display each inspection request with approve and cancel buttons
                 while ($received = mysqli_fetch_assoc($receivedResult)) {
                     echo "<div>";
-                    echo "<p>User ID: " . $received['user_id'] . "</p>";
+                    echo "<p>Property: " . $received['property_title'] . "</p>";
                     echo "<p>Status: " . $received['status'] . "</p>";
                     // Add additional details as needed
 
@@ -91,10 +94,10 @@
                 // No inspection requests received by the user
                 echo "<p>You have not received any inspection requests.</p>";
             }
-
             // Close the database connection
             mysqli_close($conn);
         ?>
+        </section>
     </div>
 
     <!-- Include your footer.php file here -->
