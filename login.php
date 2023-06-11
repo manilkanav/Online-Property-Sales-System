@@ -13,7 +13,6 @@
 include 'includes/header.php';
 ?>
 
-<!-- Login form -->
 <section class = "section">
     <h2 class = "title">Welocome Back</h2>
     <form action="actions/login_process.php" method="post">
@@ -41,7 +40,7 @@ if (isset($_GET['error'])) {
 ?>
 
 <?php
-// Include the footer
+
 include 'includes/footer.php';
 ?>
 

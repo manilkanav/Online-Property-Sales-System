@@ -1,19 +1,23 @@
 /* index_styles.css */
 
 .hero {
+  background-image: url(../images/assets/banner.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
   background-color: #f2f2f2;
-  padding: 80px 0;
+  padding: 100px 0;
   text-align: center;
 }
 
 .hero h1 {
-  font-size: 36px;
-  color: #333;
+  font-size: 45px;
+  color: black;
 }
 
 .hero p {
-  font-size: 18px;
-  color: #777;
+  font-size: 24px;
+  color: #575656;
   margin-bottom: 30px;
 }
 

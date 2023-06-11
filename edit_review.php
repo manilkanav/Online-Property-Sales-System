@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php
-// Include the database connection file
+
 require_once 'database/db_connect.php';
 require 'includes/header.php'; 
 
