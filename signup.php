@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Online Property Sales</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/signup.css">
 </head>
 <body>
 <?php include 'includes/header.php'; ?>

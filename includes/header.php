@@ -35,7 +35,7 @@
 
                 echo '<div class="buttons">';
                 echo '<a href="login.php" class="login_button button">Login</a>';
-                echo '<a href="test.php" class="signup_button button">Sign Up</a>';
+                echo '<a href="signup.php" class="signup_button button">Sign Up</a>';
                 echo '</div>';
             }
             ?>
