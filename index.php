@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Online Property Sales</title>
     <link rel="stylesheet" href="css/styles.css"> 
+    <link rel="stylesheet" href="css/index_styles.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -45,7 +46,7 @@
 
                         echo '<div class="property-card">';
                         echo '<img src="' . $imageUrl . '" alt="' . $propertyName . '">';
-                        echo '<h3>' . $propertyName . '</h3>';
+                        echo '<h3 class="property-title">' . $propertyName . '</h3>';
                         echo '</div>';
                     }
                 } else {
