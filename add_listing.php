@@ -17,8 +17,6 @@
     }
 ?>
 
-<h2>Add Property Listing</h2>
-
 <script>
     function validateFileUpload() {
         var fileInputs = document.querySelectorAll('input[type="file"]');
@@ -62,7 +60,10 @@
 
 </script>
 
+<section class = "listing_section">
+    <h2 class = "listing_title">Add Property Listing</h2>
 <form action="actions/property_process.php" method="POST" enctype="multipart/form-data" onsubmit="return validateFileUpload();">
+    <div class ="listing_form">
     <label for="title">Title:</label>
     <input type="text" id="title" name="title" required><br><br>
 
@@ -95,12 +96,12 @@
 
     <label for="images">Upload Images (up to 5):</label>
     <input type="file" id="images" name="images[]" accept="image/*" multiple onchange="previewImages(event)"><br><br>
-    
+    </div>
     <div id="image_preview"></div>
 
-    <input type="submit" value="Add Listing">
+    <input class = "addlistingbtn" type="submit" value="Add Listing">
 </form>
-
+</section>
 <script src="js/addlisting.js"></script>
 <?php include 'includes/footer.php'; ?>
 </body>
