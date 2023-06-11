@@ -1,0 +1,34 @@
+.title {
+  color: #2f52a4;
+  padding-left: 60%;
+}
+
+.section {
+  background-color: aliceblue;
+  padding: 50px 50px 300px;
+}
+
+.username {
+}
+
+.password {
+}
+
+.submitbtn {
+}
+
+.form-group {
+  display: block;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+}

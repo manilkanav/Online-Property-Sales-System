@@ -4,6 +4,7 @@
     <title>Login Page</title>
     <!-- Your CSS and other head elements -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
 
@@ -27,6 +28,7 @@ include 'includes/header.php';
         <button type="submit">Login</button>
     </form>
 </section>
+
 
 <?php
 

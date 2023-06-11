@@ -66,13 +66,13 @@
                 // Check if any properties are found
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
-                        // Display the property information in a property card
-                        echo '<div class="property-card">';
-                        echo '<img src="' . $row['image_url'] . '" alt="Property Image">';
-                        echo '<h3 class="property-title">' . $row['title'] . '</h3>';
-                        echo '<p class="property-price">' . $row['price'] . '</p>';
-                        echo '<a href="property_details.php?id=' . $row['id'] . '">View More</a>';
-                        echo '</div>';
+                        // Display the property information
+                        echo "<p>Title: " . $row['title'] . "</p>";
+                        echo "<p>Location: " . $row['address'] . "</p>";
+                        echo "<p>Bedrooms: " . $row['bedrooms'] . "</p>";
+                        echo "<p>Bathrooms: " . $row['bathrooms'] . "</p>";
+                        echo "<a href='property_details.php?id=" . $row['id'] . "'>View More</a>";
+                        echo "<hr>";
                     }
                 } else {
                     echo "No properties found.";
