@@ -1,36 +1,25 @@
-.title {
+.signup_title {
   color: #2f52a4;
-  padding-left: 65px;
+  padding-left: 100px;
   padding-bottom: 40px;
   font-size: 36px;
 }
 
-.section {
+.signup_section {
   background-color: aliceblue;
-  padding: 100px 50px 300px 600px;
+  padding: 80px 50px 200px 600px;
 }
 
-.form-group {
+.signupform_group {
   display: block;
   margin-bottom: 40px;
 }
 
-label {
-  display: block;
-}
-
-.loginbtn {
+.signupnbtn {
   padding: 10px 35px;
   background-color: #5787f7;
   border-radius: 10%;
   border: none;
   margin-top: 10px;
-  margin-left: 140px;
-}
-
-input[type="text"],
-input[type="password"] {
-  width: 360px;
-  padding: 8px;
-  margin-top: 7px;
+  margin-left: 100px;
 }

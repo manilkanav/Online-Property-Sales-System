@@ -7,7 +7,6 @@
             <ul>
                 <li><a href="index.php" class="nav-link">Home</a></li>
                 <li><a href="search.php" class="nav-link">Search</a></li>
-                <li><a href="user_profile.php" class="nav-link">My Profile</a></li>
                 <li><a href="add_listing.php" class="nav-link">Add Listing</a></li>
                 <!-- Add more menu items as needed -->
             </ul>

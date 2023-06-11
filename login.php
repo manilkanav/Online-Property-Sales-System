@@ -14,8 +14,8 @@ include 'includes/header.php';
 ?>
 
 <!-- Login form -->
-<section>
-    <h2>Login</h2>
+<section class = "section">
+    <h2 class = "title">Welocome Back</h2>
     <form action="actions/login_process.php" method="post">
         <div class="form-group">
             <label for="username">Username</label>
@@ -25,7 +25,7 @@ include 'includes/header.php';
             <label for="password">Password</label>
             <input type="password" id="password" name="password" placeholder="Password" required>
         </div>
-        <button type="submit">Login</button>
+        <button class="loginbtn" type="submit">Login</button>
     </form>
 </section>
 
