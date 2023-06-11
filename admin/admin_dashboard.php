@@ -8,7 +8,6 @@ if (!isset($_SESSION['admin_id'])) {
     exit();
 }
 
-// Include the database connection file
 require '../database/db_connect.php';
 
 // Function to delete a moderator

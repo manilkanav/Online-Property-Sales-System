@@ -1,5 +1,5 @@
 <?php
-    // Include the database connection file
+    
     require_once '../database/db_connect.php';
 
     // Check if the property ID is provided in the URL

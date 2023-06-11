@@ -8,7 +8,7 @@
                 <li><a href="index.php" class="nav-link">Home</a></li>
                 <li><a href="search.php" class="nav-link">Search</a></li>
                 <li><a href="add_listing.php" class="nav-link">Add Listing</a></li>
-                <!-- Add more menu items as needed -->
+                <li><a href="about.html" class="nav-link">About</a></li>
             </ul>
         </div>
         <div class="user">
