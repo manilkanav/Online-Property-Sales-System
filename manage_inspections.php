@@ -4,6 +4,11 @@
     <title>User Dashboard - Manage Inspections</title>
     <!-- Include your CSS stylesheets and other necessary resources here -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/user_dashboard.css">
+    <style>
+        /* Additional CSS styles for the user dashboard */
+        /* Add your CSS styles here */
+    </style>
 </head>
 <body>
     <!-- Include your header.php file here -->
@@ -16,7 +21,7 @@
             exit();
         }
 
-        echo '<h1>Welcome to Property Sales, ' . $_SESSION['name'] . '!</h1>';
+        echo '<h1 class="dashboard-title">Welcome to Property Sales, ' . $_SESSION['name'] . '!</h1>';
     ?>
 
     <!-- Subheader with tabs -->
@@ -32,7 +37,7 @@
     <div class="content">
         <section>
         <!-- Display inspection requests done by the user -->
-        <h2>Inspection Requests Done By You</h2>
+        <h2 class="section-title">Inspection Requests Done By You</h2>
         <?php
             // Include the database connection file
             require_once 'database/db_connect.php';
@@ -48,14 +53,14 @@
             if (mysqli_num_rows($inspectionResult) > 0) {
                 // Display each inspection request with its status and property name
                 while ($inspection = mysqli_fetch_assoc($inspectionResult)) {
-                    echo "<div>";
+                    echo "<div class='inspection-request'>";
                     echo "<p>Property: " . $inspection['property_title'] . "</p>";
                     echo "<p>Status: " . $inspection['status'] . "</p>";
                     // Add additional details as needed
 
                     // Add cancel button if the request is pending
                     if ($inspection['status'] === 'Pending') {
-                        echo "<a href='actions/cancel_inspection.php?id=" . $inspection['id'] . "'>Cancel</a>";
+                        echo "<a href='actions/cancel_inspection.php?id=" . $inspection['id'] . "' class='cancel-btn'>Cancel</a>";
                     }
                     echo "</div>";
                 }
@@ -68,7 +73,7 @@
 
         <!-- Display inspection requests received by the user -->
         <section>
-        <h2>Inspection Requests Received By You</h2>
+        <h2 class="section-title">Inspection Requests Received By You</h2>
         <?php
             // Prepare the SQL statement to fetch the inspection requests received by the user
             $receivedQuery = "SELECT inspection_requests.*, properties.title AS property_title FROM inspection_requests JOIN properties ON inspection_requests.property_id = properties.id WHERE properties.user_id = $userID";
@@ -78,15 +83,15 @@
             if (mysqli_num_rows($receivedResult) > 0) {
                 // Display each inspection request with approve and cancel buttons
                 while ($received = mysqli_fetch_assoc($receivedResult)) {
-                    echo "<div>";
+                    echo "<div class='inspection-request'>";
                     echo "<p>Property: " . $received['property_title'] . "</p>";
                     echo "<p>Status: " . $received['status'] . "</p>";
                     // Add additional details as needed
 
                     // Add approve and cancel buttons if the request is pending
                     if ($received['status'] === 'Pending') {
-                        echo "<a href='actions/approve_inspection.php?id=" . $received['id'] . "'>Approve</a>";
-                        echo "<a href='actions/cancel_inspection.php?id=" . $received['id'] . "'>Cancel</a>";
+                        echo "<a href='actions/approve_inspection.php?id=" . $received['id'] . "' class='approve-btn'>Approve</a>";
+                        echo "<a href='actions/cancel_inspection.php?id=" . $received['id'] . "' class='cancel-btn'>Cancel</a>";
                     }
                     echo "</div>";
                 }

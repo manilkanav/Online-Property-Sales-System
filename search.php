@@ -23,7 +23,7 @@
         </form>
     </div>
 
-    <div id="search-results">
+    <div id="search-results" class="property-listings">
         <?php
             // Include the database connection file
             require 'database/db_connect.php';
@@ -36,24 +36,28 @@
                 // Prepare the SQL statement based on the selected search option
                 switch ($searchBy) {
                     case 'name':
-                        $query = "SELECT p.*, i.image_url FROM properties p
+                        $query = "SELECT p.*, MIN(i.image_url) AS image_url FROM properties p
                                   INNER JOIN images i ON p.id = i.property_id
-                                  WHERE p.title LIKE '%$searchTerm%' AND p.status = 'approved'";
+                                  WHERE p.title LIKE '%$searchTerm%' AND p.status = 'approved'
+                                  GROUP BY p.id";
                         break;
                     case 'location':
-                        $query = "SELECT p.*, i.image_url FROM properties p
+                        $query = "SELECT p.*, MIN(i.image_url) AS image_url FROM properties p
                                   INNER JOIN images i ON p.id = i.property_id
-                                  WHERE p.address LIKE '%$searchTerm%' AND p.status = 'approved'";
+                                  WHERE p.address LIKE '%$searchTerm%' AND p.status = 'approved'
+                                  GROUP BY p.id";
                         break;
                     case 'bedrooms':
-                        $query = "SELECT p.*, i.image_url FROM properties p
+                        $query = "SELECT p.*, MIN(i.image_url) AS image_url FROM properties p
                                   INNER JOIN images i ON p.id = i.property_id
-                                  WHERE p.bedrooms = '$searchTerm' AND p.status = 'approved'";
+                                  WHERE p.bedrooms = '$searchTerm' AND p.status = 'approved'
+                                  GROUP BY p.id";
                         break;
                     case 'bathrooms':
-                        $query = "SELECT p.*, i.image_url FROM properties p
+                        $query = "SELECT p.*, MIN(i.image_url) AS image_url FROM properties p
                                   INNER JOIN images i ON p.id = i.property_id
-                                  WHERE p.bathrooms = '$searchTerm' AND p.status = 'approved'";
+                                  WHERE p.bathrooms = '$searchTerm' AND p.status = 'approved'
+                                  GROUP BY p.id";
                         break;
                     default:
                         $query = "";
@@ -66,20 +70,22 @@
                 // Check if any properties are found
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
-                        // Display the property information
-                        echo "<p>Title: " . $row['title'] . "</p>";
-                        echo "<p>Location: " . $row['address'] . "</p>";
-                        echo "<p>Bedrooms: " . $row['bedrooms'] . "</p>";
-                        echo "<p>Bathrooms: " . $row['bathrooms'] . "</p>";
-                        echo "<a href='property_details.php?id=" . $row['id'] . "'>View More</a>";
-                        echo "<hr>";
+                        // Display the property card
+                        echo '<div class="property-card">';
+                        echo '<img src="' . $row['image_url'] . '" alt="' . $row['title'] . '">';
+                        echo '<h3 class="property-title">' . $row['title'] . '</h3>';
+                        echo '<p class="property-price">$' . $row['price'] . '</p>';
+                        echo '<a href="property_details.php?id=' . $row['id'] . '" class="view-details">View Details</a>';
+                        echo '</div>';
                     }
                 } else {
-                    echo "No properties found.";
+                    echo '<div class="empty-container">No properties found.</div>';
                 }
 
                 // Close the database connection
                 mysqli_close($conn);
+            } else {
+                echo '<div class="empty-container">Perform a search to see results.</div>';
             }
         ?>
     </div>
