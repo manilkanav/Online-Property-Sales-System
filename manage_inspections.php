@@ -2,13 +2,9 @@
 <html>
 <head>
     <title>User Dashboard - Manage Inspections</title>
-    <!-- Include your CSS stylesheets and other necessary resources here -->
+   
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/user_dashboard.css">
-    <style>
-        /* Additional CSS styles for the user dashboard */
-        /* Add your CSS styles here */
-    </style>
 </head>
 <body>
     <!-- Include your header.php file here -->
@@ -24,7 +20,6 @@
         echo '<h1 class="dashboard-title">Welcome to Property Sales, ' . $_SESSION['name'] . '!</h1>';
     ?>
 
-    <!-- Subheader with tabs -->
     <div class="subheader">
         <ul class="tabs">
             <li><a href="user_dashboard.php">Manage Listings</a></li>
@@ -33,10 +28,10 @@
         </ul>
     </div>
 
-    <!-- Main content of the user dashboard -->
+    
     <div class="content">
         <section>
-        <!-- Display inspection requests done by the user -->
+        
         <h2 class="section-title">Inspection Requests Done By You</h2>
         <?php
             // Include the database connection file
@@ -71,7 +66,7 @@
         ?>
         </section>
 
-        <!-- Display inspection requests received by the user -->
+        
         <section>
         <h2 class="section-title">Inspection Requests Received By You</h2>
         <?php

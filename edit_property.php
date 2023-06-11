@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>Edit Property</title>
-    <!-- Include your CSS stylesheets and other necessary resources here -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -57,7 +56,6 @@ mysqli_close($conn);
 ?>
 
 
-    <!-- Include your header.php file here -->
 
     <div class="container">
         <h2>Edit Property</h2>
@@ -96,7 +94,7 @@ mysqli_close($conn);
         </form>
     </div>
 
-    <!-- Include your footer.php file here -->
+
     <?php include 'includes/footer.php'; ?>
 </body>
 </html>

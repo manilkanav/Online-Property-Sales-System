@@ -12,3 +12,29 @@
   height: auto;
   margin-bottom: 5px;
 }
+
+.listing_title {
+  color: #2f52a4;
+  padding-left: 20px;
+  padding-bottom: 40px;
+  font-size: 36px;
+}
+
+.listing_section {
+  background-color: aliceblue;
+  padding: 90px 50px 150px 600px;
+}
+
+.listiing_form {
+  display: block;
+  margin-bottom: 40px;
+}
+
+.addlistingbtn {
+  padding: 10px 35px;
+  background-color: #5787f7;
+  border-radius: 10%;
+  border: none;
+  margin-top: 10px;
+  margin-left: 140px;
+}

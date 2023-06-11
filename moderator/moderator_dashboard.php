@@ -69,7 +69,7 @@ if (isset($_POST['reject'])) {
                 echo "<div>";
                 echo "<p>Title: " . $property['title'] . "</p>";
                 echo "<p>Description: " . $property['description'] . "</p>";
-                // Add additional property details as needed
+                
 
                 // Add details button
                 echo "<form action='property_details_moderator.php' method='GET'>";
