@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Property Details</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
@@ -32,6 +33,26 @@
                 <p>Price: <?php echo $property['price']; ?></p>
                 <p>Description: <?php echo $property['description']; ?></p>
                 <!-- Display other property fields as needed -->
+
+                <!-- Save Property button -->
+                <?php
+                    if (isset($_SESSION['user_id'])) {
+                        $userID = $_SESSION['user_id'];
+                        // Check if the property is already saved by the user
+                        $savedQuery = "SELECT * FROM saved_properties WHERE user_id = $userID AND property_id = $propertyID";
+                        $savedResult = mysqli_query($conn, $savedQuery);
+                        if (mysqli_num_rows($savedResult) > 0) {
+                            // Property is already saved
+                            echo '<button class="btn btn-primary" disabled><i class="fas fa-star"></i> Property Saved</button>';
+                        } else {
+                            // Property is not saved, display the save button
+                            echo '<a href="actions/save_property.php?id=' . $propertyID . '" class="btn btn-primary"><i class="far fa-star"></i> Save Property</a>';
+                        }
+                    } else {
+                        // User not logged in, display a login prompt or redirect to login page
+                        echo '<p>Login to save this property.</p>';
+                    }
+                ?>
 
                 <h3>Reviews</h3>
                 <?php
@@ -73,6 +94,22 @@
                     <textarea id="comment" name="comment" rows="4" cols="50" required></textarea><br><br>
                     <input type="submit" value="Submit Review">
                 </form>
+
+                <!-- Option to request a schedule -->
+                <?php
+                if (isset($_SESSION['user_id'])) {
+                    echo '<h3>Request Schedule</h3>';
+                    echo '<form action="actions/request_schedule.php" method="POST">';
+                    echo '<input type="hidden" name="property_id" value="' . $propertyID . '">';
+                    echo '<label for="schedule_date">Preferred Date:</label>';
+                    echo '<input type="date" id="schedule_date" name="schedule_date" required><br><br>';
+                    echo '<input type="submit" value="Request Schedule">';
+                    echo '</form>';
+                } else {
+                    echo '<p>Login to request a schedule for this property.</p>';
+                }
+                ?>
+
                 <?php
             } else {
                 echo "Property not found or not approved.";
