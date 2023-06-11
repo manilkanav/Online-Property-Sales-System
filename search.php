@@ -4,24 +4,23 @@
     <meta charset="UTF-8">
     <title>Property Search</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/search_styles.css">
     
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
 
     <div class="container">
-        <h2>Property Search</h2>
-        <form method="GET">
-            <label for="search">Search Term:</label>
-            <input type="text" id="search" name="search" required>
-            <label for="search_by">Search By:</label>
-            <select id="search_by" name="search_by">
+        <h2 class ="header_name">Find the property that fits you..</h2>
+        <form class="searchbar" method="GET">
+            <input type="text" id="search" name="search" class="searchbox" required >
+            <select id="search_by" name="search_by" class ="searchbox_dropdown">
                 <option value="name">Name</option>
                 <option value="location">Location</option>
                 <option value="bedrooms">Bedrooms</option>
                 <option value="bathrooms">Bathrooms</option>
             </select>
-            <input type="submit" value="Search">
+            <input type="submit" value="Search" class = "searchbutton">
         </form>
     </div>
 

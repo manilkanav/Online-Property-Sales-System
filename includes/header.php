@@ -1,12 +1,12 @@
 <header>
     <nav>
         <div class="logo">
-            <a href="index.php"><img src="logo.png" alt="Logo"></a>
+            <a href="index.php"><img src="../images/assets/logo.png" alt="Logo" ></a>
         </div>
         <div class="pages">
             <ul>
                 <li><a href="index.php" class="nav-link">Home</a></li>
-                <li><a href="search.php" class="nav-link">Search Properties</a></li>
+                <li><a href="search.php" class="nav-link">Search</a></li>
                 <li><a href="user_profile.php" class="nav-link">My Profile</a></li>
                 <li><a href="add_listing.php" class="nav-link">Add Listing</a></li>
                 <!-- Add more menu items as needed -->
@@ -35,8 +35,8 @@
                 // User is not logged in, display login and signup buttons
 
                 echo '<div class="buttons">';
-                echo '<a href="login.php" class="button">Login</a>';
-                echo '<a href="signup.php" class="button">Sign Up</a>';
+                echo '<a href="login.php" class="login_button button">Login</a>';
+                echo '<a href="signup.php" class="signup_button button">Sign Up</a>';
                 echo '</div>';
             }
             ?>

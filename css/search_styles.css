@@ -1,0 +1,63 @@
+.container {
+  background-color: white;
+  background-image: url(../images/assets/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.header_name {
+  background-color: #88cf45;
+  padding-bottom: 50px;
+  height: 60px;
+}
+
+.container h2 {
+  color: white;
+  padding-top: 80px;
+  padding-bottom: 60px;
+  font-size: 48px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.searchbar {
+  background-color: white;
+  width: 45%;
+  margin-top: 170px;
+  margin-left: 365px;
+  height: 150px;
+  position: center;
+  text-align: center;
+  padding: 100px 45px 0px 45px;
+}
+
+.searchbox {
+  background-color: aliceblue;
+  border-style: none;
+  box-shadow: 2px 5px 5px rgb(160, 203, 243);
+  width: 40%;
+  height: 43px;
+}
+
+.searchbox_dropdown {
+  color: black;
+  background-color: rgb(201, 219, 236);
+  border-style: none;
+  text-align: center;
+  box-shadow: 2px 5px 5px rgb(160, 203, 243);
+  padding-right: 10px;
+  width: 120px;
+  height: 45px;
+}
+
+.searchbutton {
+  color: white;
+  font-weight: bold;
+  background-color: red;
+  box-shadow: 2px 5px 5px rgb(232, 150, 173);
+  border-style: none;
+  width: 120px;
+  height: 45px;
+  border-radius: 6px;
+}
